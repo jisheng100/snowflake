@@ -1,0 +1,13 @@
+{
+  "name": "jisheng100/snowflake",
+  "type": "library",
+  "license": "MIT",
+  "description": "Webman plugin jisheng100/snowflake",
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Jisheng100\\Snowflake\\": "src"
+    }
+  }
+}
