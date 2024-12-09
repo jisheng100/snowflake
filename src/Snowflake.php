@@ -61,6 +61,12 @@ class Snowflake
             'sequence_bits' => 12,  // 序列号占用位数
         ]);
 
+        // 判断位数总和是否超过 22 位
+        $totalBits = $config['machine_id_bits'] + $config['process_id_bits'] + $config['sequence_bits'];
+        if ($totalBits > 22) {
+            throw new \InvalidArgumentException("Invalid configuration: total bits (machine_id_bits + process_id_bits + sequence_bits) cannot exceed 22. Current total: $totalBits.");
+        }
+
         // 计算最大值
         $this->maxMachineId = (1 << $config['machine_id_bits']) - 1;
         $this->maxProcessId = (1 << $config['process_id_bits']) - 1;
