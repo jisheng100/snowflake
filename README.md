@@ -1,4 +1,4 @@
-##简介
+## 简介
 ### Webman 雪花 ID 生成类
 
 使用简单、高效的雪花 ID 算法生成唯一的 64 位整数 ID，支持高并发场景，适合分布式系统中唯一标识的生成需求。
@@ -8,7 +8,7 @@
 composer require jisheng100/snowflake
 ```
 
-##使用
+## 使用
 ### 1. 生成雪花id
 
 ```
@@ -19,7 +19,7 @@ $id =  \Jisheng100\Snowflake\Snowflake::instance()->generateId();
 ```
 $detail = \Jisheng100\Snowflake\Snowflake::instance()->parseId($id);
 ```
-##配置
+## 配置
 
 雪花 ID 算法基于 64 位整数设计，其中：
 
