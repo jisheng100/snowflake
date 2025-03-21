@@ -38,7 +38,8 @@ class Snowflake
             // 从配置中读取 machine_id，默认为 0
             $machineId = (int)Config::get('plugin.jisheng100.snowflake.app.machine_id');
             // 获取当前 Worker 进程 ID，默认为 0
-            $processId = App::worker()->id ?: 0;
+            $processId = App::worker() ? (App::worker()->id ?: 0) : 0;
+
             // 创建 Snowflake 实例
             self::$instance = new self($machineId, $processId);
         }
